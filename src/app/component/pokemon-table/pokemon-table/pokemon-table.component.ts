@@ -18,7 +18,9 @@ export class PokemonTableComponent implements OnInit {
   constructor(private pokeApi: PokeApiService) {}
 
   ngOnInit() {
-    this.pokeApi.getPokemons().subscribe((data) => {
+    // lista de 50
+    this.loading = true;
+    this.pokeApi.getPokemons(0, 150).subscribe((data: any) => {
       const results = data.results;
       const requests = results.map((poke: any) => this.pokeApi.getPokemonByUrl(poke.url));
       forkJoin(requests).subscribe((pokeDetails) => {
@@ -32,12 +34,9 @@ export class PokemonTableComponent implements OnInit {
 
   showDetails(poke: any) {
     this.selectedPokemon = poke;
-    // No longer fetch description/species
   }
 
   backToTable() {
     this.selectedPokemon = null;
   }
 }
-
-
