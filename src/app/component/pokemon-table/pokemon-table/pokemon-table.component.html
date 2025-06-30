@@ -1,0 +1,35 @@
+<div *ngIf="loading">
+  Cargando datos de los Pokémon...
+</div>
+
+<div *ngIf="!loading && !selectedPokemon">
+  <table>
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let poke of pokemons">
+        <td><img [src]="poke.sprites.front_default" alt="{{ poke.name }}" style="cursor:pointer" (click)="showDetails(poke)" /></td>
+        <td>{{ poke.name }}</td>
+        <td>
+          <span *ngFor="let t of poke.types; let last = last">
+            {{ t.type.name }}<span *ngIf="!last">, </span>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="selectedPokemon">
+  <button (click)="backToTable()">Back to Table</button>
+  <h2>{{ selectedPokemon.name | titlecase }}</h2>
+  <img [src]="selectedPokemon.sprites.front_default" alt="{{ selectedPokemon.name }}" />
+  <p><strong>Type:</strong> <span *ngFor="let t of selectedPokemon.types; let last = last">{{ t.type.name }}<span *ngIf="!last">, </span></span></p>
+  <p><strong>Abilities:</strong> <span *ngFor="let ab of selectedPokemon.abilities; let last = last">{{ ab.ability.name }}<span *ngIf="!last">, </span></span></p>
+  <p><strong>Game Indices:</strong> <span *ngFor="let gi of selectedPokemon.game_indices; let last = last">{{ gi.version.name }}<span *ngIf="!last">, </span></span></p>
+</div>
