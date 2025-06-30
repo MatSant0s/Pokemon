@@ -1,5 +1,168 @@
-h1{
-    color: red;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+:host {
+  display: block;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  background: #f4f4f4;
+  color: #232f3e;
+  padding: 2rem 0;
+}
 
+table {
+  width: 90%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(35,47,62,0.07);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: #f0f1f2;
+}
+
+thead th {
+  padding: 1rem;
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 2px solid #e3e6e8;
+}
+
+tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e3e6e8;
+  vertical-align: middle;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e3e6e8;
+  transition: box-shadow 0.2s;
+}
+
+img[style*="cursor:pointer"]:hover {
+  box-shadow: 0 0 0 2px #232f3e33;
+}
+
+button {
+  background: #fff;
+  color: #232f3e;
+  border: 1px solid #e3e6e8;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background 0.2s, border 0.2s;
+}
+button:hover {
+  background: #f0f1f2;
+  border-color: #bfc3c6;
+}
+
+/* Detail view */
+.detail-view {
+  background: #fff;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(35,47,62,0.09);
+  text-align: center;
+}
+.detail-view h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.detail-view p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #ffcb05;
+  text-shadow: 3px 3px 0 #2a75bb, 6px 6px 0 #3b4cca;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  letter-spacing: 2px;
+  font-family: 'Arial Black', 'Impact', 'Pokemon Solid', Arial, sans-serif;
+}
+
+th {
+  font-family: 'Arial Black', 'Impact', 'Pokemon Solid', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #2a75bb;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #ffcb05;
+}
+
+th:nth-child(1) {
+  color: #d62828;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+th:nth-child(2) {
+  color: #3b4cca;
+  text-shadow: 1px 1px 0 #ffcb05;
+}
+
+th:nth-child(3) {
+  color: #ffcb05;
+  text-shadow: 1px 1px 0 #2a75bb;
+}
+
+/* Table image style */
+td img {
+  border: 2.5px solid #2a75bb;
+  background: linear-gradient(135deg, #ffcb05 60%, #3b4cca 100%);
+  box-shadow: 0 2px 8px #2a75bb44;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin: 0.2rem 0;
+}
+
+td img:hover {
+  border-color: #ffcb05;
+  box-shadow: 0 0 0 4px #ffcb0555;
+}
+
+/* Name and type cell style */
+td:nth-child(2) {
+  font-weight: 700;
+  color: #3b4cca;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #ffcb05;
+}
+
+td:nth-child(3) {
+  font-weight: 700;
+  color: #ffcb05;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 0 #2a75bb;
+}
+
+@media (max-width: 600px) {
+  table, .detail-view {
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem;
+  }
+  thead th, tbody td {
+    padding: 0.5rem;
+  }
 }
